@@ -10,9 +10,12 @@ import { List } from './../list';
 export class ToDoComponent implements OnInit {
   title ="Goals";
   todo: List[] = [
-  {name:"Fill out form", id:1, description:"Fill this out or don't come morrow"},
-  {name:"Do chores", id:2, description:"Do the dishes, wash the house"}
-  ]
+new List(1, "Feed Poppy", "Get meat if none, and give with water."),
+new List(2, "Do Kata", "You have to increase your ranking")
+  ];
+  toggleDescription(index){
+    this.todo[index].showDescription = !this.todo[index].showDescription;
+  }
   constructor() { }
 
   ngOnInit(): void {

@@ -1,8 +1,12 @@
 <div>
     <ul>
-        <li *ngFor="let item of todo">
-            {{item.name}}
-            <app-to-do-detail [item]="item"></app-to-do-detail>
-        </li>
+        <div *ngFor="let item of todo; let i = index">
+            <li>
+                {{item.name}}
+            </li>
+            <button (click)="toggleDescription(i)">Show Description</button>
+            <app-to-do-detail *ngIf="item.showDescription" [item]="item"></app-to-do-detail>
+        </div>
     </ul>
+    <p *ngIf="todo.length > 10">Beware, those are a lot of things to do in just one day!!!</p>
 </div>
