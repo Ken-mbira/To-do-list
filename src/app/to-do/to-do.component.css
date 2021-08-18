@@ -1,0 +1,18 @@
+.task {
+    width: 400px;
+    height: fit-content;
+    border: solid black 2px;
+    padding: 10px;
+}
+
+.appearing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.done-button {
+    color: green;
+    width: fit-content;
+    height: fit-content;
+}
