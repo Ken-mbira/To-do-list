@@ -1,1 +1,8 @@
-<p>to-do works!</p>
+<div>
+    <ul>
+        <li *ngFor="let item of todo">
+            {{item.name}}
+            <app-to-do-detail [item]="item"></app-to-do-detail>
+        </li>
+    </ul>
+</div>
