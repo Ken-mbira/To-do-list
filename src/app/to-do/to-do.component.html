@@ -1,30 +1,21 @@
 <div>
-    <ul>
-        <div *ngFor="let item of todo; let i = index">
-            <li>
-                {{item.name}}
-            </li>
-            <button (click)="toggleDescription(i)">Show Description</button>
-            <app-to-do-detail *ngIf="item.showDescription" [item]="item"></app-to-do-detail>
-        </div>
-    </ul>
-    <p *ngIf="todo.length > 10">Beware, those are a lot of things to do in just one day!!!</p>
-
     <div class="mains">
         <ol>
-            <li>
+            <li *ngFor="let item of todo; let i = index">
                 <div class="task">
                     <div class="appearing">
                         <div class="task-name">
-                            <p><strong>Name:</strong> <span id="name"></span></p>
+                            <p><strong>Name:</strong> <span id="name">{{item.name}}</span></p>
                         </div>
                         <div class="task-toggle-button">
-                            <button>Details</button>
+                            <button (click)="toggleDescription(i)">Details</button>
                         </div>
                     </div>
                     <div class="disappearing">
                         <div class="description">
-                            <p><strong>Description:</strong> <span id="description"></span></p>
+                            <p><strong>Description:</strong>
+                                <app-to-do-detail *ngIf="item.showDescription" [item]="item"></app-to-do-detail>
+                            </p>
                         </div>
                         <div class="done-button">
                             <button>Done</button>
@@ -32,6 +23,7 @@
                     </div>
                 </div>
             </li>
+            <p *ngIf="todo.length > 10">Beware, those are a lot of things to do in just one day!!!</p>
         </ol>
 
     </div>

@@ -16,3 +16,7 @@
     width: fit-content;
     height: fit-content;
 }
+
+.description {
+    display: flex;
+}
