@@ -11,10 +11,16 @@ export class ToDoComponent implements OnInit {
   title ="Goals";
   todo: List[] = [
 new List(1, "Feed Poppy", "Get meat if none, and give with water."),
-new List(2, "Do Kata", "You have to increase your ranking")
+new List(2, "Do Kata", "You have to increase your ranking"),
+new List(3, "Finish IP", "Its due soon, you better get to it!")
   ];
   toggleDescription(index){
     this.todo[index].showDescription = !this.todo[index].showDescription;
+  };
+  completeTask(isDone,index){
+    if(isDone){
+      this.todo.splice(index,1)
+    }
   }
   constructor() { }
 

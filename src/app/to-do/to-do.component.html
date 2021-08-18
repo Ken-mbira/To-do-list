@@ -18,7 +18,7 @@
                             </p>
                         </div>
                         <div class="done-button">
-                            <button>Done</button>
+                            <app-done *ngIf="item.showDescription" (isDone)=completeTask($event,i)></app-done>
                         </div>
                     </div>
                 </div>
